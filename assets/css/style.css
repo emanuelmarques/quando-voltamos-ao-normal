@@ -8,6 +8,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -1555,4 +1556,25 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+}
+
+.dgs-icon {
+  content: url('https://portal5g.pt/wp-content/uploads/2020/11/DGS-logo.png');
+  height: 50px;
+  width: 50px;
+  display: block;
+}
+
+.countrymeters-icon {
+  content: url('https://pbs.twimg.com/profile_images/558750365315653633/Xeubn2zO_400x400.png');
+  height: 60px;
+  width: 60px;
+  display: block;
+}
+
+.estamoson-icon {
+  content: url('https://portugal.mfa.gov.ua/storage/app/uploads/public/5df/359/35b/5df35935bb5ef801431119.jpg');
+  height: 40px;
+  width: 40px;
+  display: block;
 }
