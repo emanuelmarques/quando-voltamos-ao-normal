@@ -1578,3 +1578,10 @@ section {
   width: 30px;
   display: block;
 }
+
+.dssg-icon {
+  content: url('https://avatars.githubusercontent.com/u/49449562?s=200&v=4');
+  height: 30px;
+  width: 30px;
+  display: block;
+}

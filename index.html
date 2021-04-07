@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CY5V2N6VX"></script>
   <script>
@@ -281,32 +282,32 @@
 
         <div class="row counters">
           <div class="col-xl-3 col-lg-6 col-md-12 text-center">
-            <span id = "givenVaccines" data-purecounter-start="0" data-purecounter-end="1907188" data-purecounter-duration="1"
+            <span id = "givenVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Vacinas Administradas</p>
           </div>
 
           <div class="col-xl-3 col-lg-6 col-md-12 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="560871" data-purecounter-duration="1"
+            <span id = "fullyVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Total Pessoas Imunizadas</p>
           </div>
 
           <div class="col-xl-3 col-lg-6 col-md-12 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="39718" data-purecounter-duration="1"
+            <span id = "newVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Vacinas Administradas nas últimas 24h</p>
           </div>    
 
           <div class="col-xl-3 col-lg-6 col-md-12 text-center">
-            <span id = "speed" data-purecounter-start="0" data-purecounter-end="35235" data-purecounter-duration="1"
+            <span id = "speed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Vacinas administradas por dia </br>  (média a 15 dias)</p>
           </div>
 
      
           <div style = "text-align: right;color: grey;">
-            <p> Última atualização: 07-04-2021</p>
+            <p> Última atualização: <a id = 'dailyUpdateDate'></a></p>
            </div>
 
         </div>
@@ -326,20 +327,25 @@
         <div class="row justify-content-center">
           <div class="col-xl-10">
             <div class="row">
-              <div class="col-lg-4 col-md-6 icon-box">
+              <div class="col-lg-3 col-md-6 icon-box">
                 <div class="icon"><i class="dgs-icon"></i></div>
                 <h4 class="title"><a href="https://covid19.min-saude.pt/relatorio-de-vacinacao/" target="_blank">Direção-Geral da Saúde</a></h4>
                 <p class="description">Relatórios semanais sobre o plano de vacinação</p>
               </div>
-              <div class="col-lg-4 col-md-6 icon-box">
+              <div class="col-lg-3 col-md-6 icon-box">
                 <div class="icon"><i class="countrymeters-icon"></i></div>
                 <h4 class="title"><a href="https://countrymeters.info/pt/Portugal" target="_blank">CountryMeters</a></h4>
                 <p class="description">Dados sobre a população de Portugal</p>
               </div>
-              <div class="col-lg-4 col-md-6 icon-box">
+              <div class="col-lg-3 col-md-6 icon-box">
                 <div class="icon"><i class="estamoson-icon"></i></div>
                 <h4 class="title"><a href="https://covid19estamoson.gov.pt/" target="_blank">COVID-19: Estamos On</a></h4>
                 <p class="description">Informação diária sobre vacinação</p>
+              </div>
+              <div class="col-lg-3 col-md-6 icon-box">
+                <div class="icon"><i class="dssg-icon"></i></div>
+                <h4 class="title"><a href="hhttps://github.com/dssg-pt/covid19pt-data/blob/master/vacinas.csv" target="_blank">Data Science for Social Good Portugal</a></h4>
+                <p class="description">Dataset de vacinação</p>
               </div>
               <!-- <div class="col-lg-4 col-md-6 icon-box">
                 <div class="icon"><i class="ri-shape-line"></i></div>
@@ -573,16 +579,67 @@
   <script src="assets/js/main.js"></script>
 
   <script type="text/javascript">
+
+$(document).ready(function() {
+    $.ajax({
+        type: "GET",
+        url: "https://raw.githubusercontent.com/dssg-pt/covid19pt-data/master/vacinas.csv",
+        dataType: "text",
+        success: function(data) {processData(data);},
+        async: false
+     });
+});
+
+  var averageSpeed = 0;
+  function processData(allText) {
+      var allTextLines = allText.split(/\r\n|\n/);
+      var headers = allTextLines[0].split(',');
+      var lines = [];
+
+      for (var i=1; i<allTextLines.length; i++) {
+          var data = allTextLines[i].split(',');
+          if (data.length == headers.length) {
+
+              var tarr = {}
+              for (var j=0; j<headers.length; j++) {
+                tarr[headers[j]] = data[j];
+              }
+              lines.push(tarr);
+          }
+      }
+
+      
+      var latest = lines[lines.length - 1]
+      document.getElementById("newVaccines").setAttribute("data-purecounter-end", latest["doses_novas"]);
+      document.getElementById("givenVaccines").setAttribute("data-purecounter-end", latest["doses"]);
+      document.getElementById("fullyVaccinated").setAttribute("data-purecounter-end", latest["doses2"]);
+
+      averageSpeed = (latest["doses"] - lines[lines.length - 16]["doses"]) / 15;
+
+      document.getElementById("speed").setAttribute("data-purecounter-end", parseInt(averageSpeed));
+
+      document.getElementById("dailyUpdateDate").innerHTML = latest["data"];
+
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  
+      let data70 = dateToPercent(0.7);
+      document.getElementById("date70").innerHTML = data70.toLocaleDateString('pt-PT', options);
+
+      let data50 = dateToPercent(0.5);
+      document.getElementById("date50").innerHTML = data50.toLocaleDateString('pt-PT', options);
+
+      console.log(latest);
+      console.log(latest["doses_novas"]);
+  }
     
   function dateToPercent(percent) {
     var population = 10153698;
-    var speedPerDay = document.getElementById("speed").getAttribute("data-purecounter-end");
     var givenVaccines = document.getElementById("givenVaccines").getAttribute("data-purecounter-end");
   
     var totalVaccinesToGive = population * 2;
     var remainingVaccinesToGive = totalVaccinesToGive - givenVaccines;
   
-    var daysUntilPercent = remainingVaccinesToGive / speedPerDay * percent
+    var daysUntilPercent = remainingVaccinesToGive / averageSpeed * percent
   
     var dateOfPercent = new Date();
   
@@ -594,16 +651,6 @@
     date.setDate(date.getDate() + days);
     return date;
   }
-
-  
-
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  
-  let data70 = dateToPercent(0.7);
-  document.getElementById("date70").innerHTML = data70.toLocaleDateString('pt-PT', options);
-
-  let data50 = dateToPercent(0.5);
-  document.getElementById("date50").innerHTML = data50.toLocaleDateString('pt-PT', options);
   </script>
 
 </body>
