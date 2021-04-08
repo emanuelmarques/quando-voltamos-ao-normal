@@ -63,9 +63,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#skills">População Imunizada</a></li>
-          <li><a class="nav-link scrollto" href="#map">Mapa de Vacinação</a></li>
           <li><a class="nav-link scrollto" href="#counts">Vacinação em Números</a></li> 
+          <li><a class="nav-link scrollto active" href="#skills">População Imunizada</a></li>
+          <li><a class="nav-link scrollto" href="#map">Mapa de Vacinação</a></li>          
           <li><a class="nav-link scrollto" href="#services">Fontes de dados</a></li> 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -171,8 +171,59 @@
     </section> -->
     <!-- End About Section -->
 
+    
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container-fluid">
+        <div
+          class="col-xl-5 col-lg-6 col-md-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <h3>Vacinação em Números</h3>
+        </div>
+
+        <div class="row counters">
+
+          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
+            <span id = "givenVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Vacinas Administradas</p>
+          </div>
+          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
+            <span id = "singleVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Total Pessoas com pelo menos 1 dose</p>
+          </div>
+
+          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
+            <span id = "fullyVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Total Pessoas Imunizadas</p>
+          </div>
+
+
+          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
+            <span id = "newVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Vacinas Administradas nas últimas 24h</p>
+          </div>    
+
+          <div class="col-xl-3 col-lg-12 col-md-12 text-center">
+            <span id = "speed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Vacinas administradas por dia </br>  (média a 15 dias)</p>
+          </div>
+
+     
+          <div style = "text-align: right;color: grey;">
+            <p> Última atualização: <a id = 'dailyUpdateDate'></a></p>
+           </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
     <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills section-bg">
       <div class="container-fluid">
         <div
           class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
@@ -272,58 +323,9 @@
       </div>
     </section><!-- End map Section -->
 
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
-      <div class="container-fluid">
-        <div
-          class="col-xl-5 col-lg-6 col-md-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-          <h3>Vacinação em Números</h3>
-        </div>
-
-        <div class="row counters">
-
-          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
-            <span id = "givenVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Vacinas Administradas</p>
-          </div>
-          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
-            <span id = "singleVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Total Pessoas com pelo menos 1 dose</p>
-          </div>
-
-          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
-            <span id = "fullyVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Total Pessoas Imunizadas</p>
-          </div>
-
-
-          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
-            <span id = "newVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Vacinas Administradas nas últimas 24h</p>
-          </div>    
-
-          <div class="col-xl-3 col-lg-12 col-md-12 text-center">
-            <span id = "speed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Vacinas administradas por dia </br>  (média a 15 dias)</p>
-          </div>
-
-     
-          <div style = "text-align: right;color: grey;">
-            <p> Última atualização: <a id = 'dailyUpdateDate'></a></p>
-           </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="services" class="services section-bg">
       <div class="container-fluid">
 
         <div class="section-title">
@@ -333,7 +335,7 @@
 
         <div class="row justify-content-center">
           <div class="col-xl-10">
-            <div class="row">
+            <div class="row ">
               <div class="col-lg-4 col-md-6 icon-box">
                 <div class="icon"><i class="dgs-icon"></i></div>
                 <h4 class="title"><a href="https://covid19.min-saude.pt/relatorio-de-vacinacao/" target="_blank">Direção-Geral da Saúde</a></h4>
