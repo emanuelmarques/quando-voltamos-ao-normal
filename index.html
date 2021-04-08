@@ -281,25 +281,32 @@
         </div>
 
         <div class="row counters">
+
           <div class="col-xl-3 col-lg-6 col-md-12 text-center">
             <span id = "givenVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Vacinas Administradas</p>
           </div>
+          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
+            <span id = "singleVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Total Pessoas com pelo menos 1 dose</p>
+          </div>
 
-          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
+          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
             <span id = "fullyVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Total Pessoas Imunizadas</p>
           </div>
 
-          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
+
+          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
             <span id = "newVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Vacinas Administradas nas últimas 24h</p>
           </div>    
 
-          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
+          <div class="col-xl-3 col-lg-12 col-md-12 text-center">
             <span id = "speed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Vacinas administradas por dia </br>  (média a 15 dias)</p>
@@ -612,6 +619,8 @@ $(document).ready(function() {
       var latest = lines[lines.length - 1]
       document.getElementById("newVaccines").setAttribute("data-purecounter-end", latest["doses_novas"]);
       document.getElementById("givenVaccines").setAttribute("data-purecounter-end", latest["doses"]);
+
+      document.getElementById("singleVaccinated").setAttribute("data-purecounter-end", latest["doses1"]);
       document.getElementById("fullyVaccinated").setAttribute("data-purecounter-end", latest["doses2"]);
 
       averageSpeed = (latest["doses"] - lines[lines.length - 16]["doses"]) / 15;
