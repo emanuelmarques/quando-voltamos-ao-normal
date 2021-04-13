@@ -221,13 +221,13 @@
 
       </div>
     </section><!-- End Counts Section -->
-
+   
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container-fluid">
         <div
           class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-          <h3>População Imunizada</h3>
+          <h3>População Vacinada</h3>
           <h4>Por faixa etária</h4>
         </div>
         <div class="row justify-content-center skills-content">
@@ -237,15 +237,16 @@
             <div class="progress">
               <span class="skill">80+ <i id="progress80pluslabel" class="val"></i></span>
               <div class="progress-bar-wrap">
-                <div id="progress80plusvalue" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
-                </div>
+                <div id="progress80plusvaluefirst" class="progress-bar" role="progressbar"  aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="progress80plusvalue" class="progress-bar bg-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>                
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">65-79 <i id="progress65pluslabel"class="val"></i></span>
               <div class="progress-bar-wrap">
-                <div id="progress65plusvalue" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                <div id="progress65plusvaluefirst" class="progress-bar" role="progressbar"  aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="progress65plusvalue" class="progress-bar bg-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
@@ -253,7 +254,8 @@
             <div class="progress">
               <span class="skill">50-64 <i id="progress50pluslabel" class="val"></i></span>
               <div class="progress-bar-wrap">
-                <div id="progress50plusvalue" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                <div id="progress50plusvaluefirst" class="progress-bar" role="progressbar"  aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="progress50plusvalue" class="progress-bar bg-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
@@ -266,15 +268,17 @@
             <div class="progress">
               <span class="skill">25-49 <i id="progress25pluslabel" class="val"></i></span>
               <div class="progress-bar-wrap">
-                <div id="progress25plusvalue" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
-                </div>
+                <div id="progress25plusvaluefirst" class="progress-bar" role="progressbar"  aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="progress25plusvalue" class="progress-bar bg-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                </div>                
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">18-24 <i id="progress18pluslabel" class="val"></i></span>
               <div class="progress-bar-wrap">
-                <div id="progress18plusvalue"  class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                <div id="progress18plusvaluefirst" class="progress-bar" role="progressbar"  aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="progress18plusvalue"  class="progress-bar bg-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
@@ -282,7 +286,8 @@
             <div class="progress">
               <span class="skill">0-17 <i id="progress0pluslabel" class="val"></i></span>
               <div class="progress-bar-wrap">
-                <div id="progress0plusvalue" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                <div id="progress0plusvaluefirst" class="progress-bar" role="progressbar"  aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="progress0plusvalue" class="progress-bar bg-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
@@ -293,7 +298,8 @@
             <div class="progress">
               <span class="skill">População Portuguesa <i id="progressoveralllabel" class="val"></i></span>
               <div class="progress-bar-wrap">
-                <div id="progressoverallvalue" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                <div id="progressoverallvaluefirst" class="progress-bar" role="progressbar"  aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="progressoverallvalue" class="progress-bar bg-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
@@ -695,26 +701,33 @@ $(document).ready(function() {
       // id="progressoverallvalue"
       // id="progress0pluslabel"
 
-      document.getElementById("progressoveralllabel").innerHTML = Math.round(latest["doses2_perc"]*100) + "%";
+      document.getElementById("progressoveralllabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc"]*100) + "%";
       document.getElementById("progressoverallvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc"]*100));
+      document.getElementById("progressoverallvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc"]*100));
 
-      document.getElementById("progress80pluslabel").innerHTML = Math.round(latest["doses2_perc_80+"]*100) + "%";
+      document.getElementById("progress80pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_80+"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_80+"]*100) + "%";
       document.getElementById("progress80plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_80+"]*100));
+      document.getElementById("progress80plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_80+"]*100));
 
-      document.getElementById("progress65pluslabel").innerHTML = Math.round(latest["doses2_perc_65_79"]*100) + "%";
+      document.getElementById("progress65pluslabel").innerHTML ="1ª dose: "+ Math.round(latest["doses1_perc_65_79"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_65_79"]*100) + "%";
       document.getElementById("progress65plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_65_79"]*100));
+      document.getElementById("progress65plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_65_79"]*100));
 
-      document.getElementById("progress50pluslabel").innerHTML = Math.round(latest["doses2_perc_50_64"]*100) + "%";
+      document.getElementById("progress50pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_50_64"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_50_64"]*100) + "%";
       document.getElementById("progress50plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_50_64"]*100));
+      document.getElementById("progress50plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_50_64"]*100));
 
-      document.getElementById("progress25pluslabel").innerHTML = Math.round(latest["doses2_perc_25_49"]*100) + "%";
+      document.getElementById("progress25pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_25_49"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_25_49"]*100) + "%";
       document.getElementById("progress25plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_25_49"]*100));
+      document.getElementById("progress25plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_25_49"]*100));
 
-      document.getElementById("progress18pluslabel").innerHTML = Math.round(latest["doses2_perc_18_24"]*100) + "%";
+      document.getElementById("progress18pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_18_24"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_18_24"]*100) + "%";
       document.getElementById("progress18plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_18_24"]*100));
+      document.getElementById("progress18plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_18_24"]*100));
 
-      document.getElementById("progress0pluslabel").innerHTML = Math.round(latest["doses2_perc_0_17"]*100) + "%";
+      document.getElementById("progress0pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_0_17"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_0_17"]*100) + "%";
       document.getElementById("progress0plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_0_17+"]*100));
+      document.getElementById("progress0plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_0_17+"]*100));
 
       document.getElementById("weeklyUpdateDate").innerHTML = latest["data"];
 
