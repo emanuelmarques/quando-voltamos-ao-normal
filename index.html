@@ -631,7 +631,7 @@ $(document).ready(function() {
       document.getElementById("singleVaccinated").setAttribute("data-purecounter-end", latest["doses1"]);
       document.getElementById("fullyVaccinated").setAttribute("data-purecounter-end", latest["doses2"]);
 
-      averageSpeed = (latest["doses"] - lines[lines.length - 16]["doses"]) / 15;
+      averageSpeed = (latest["doses"] - lines[lines.length - 15]["doses"]) / 14;
 
       document.getElementById("speed").setAttribute("data-purecounter-end", parseInt(averageSpeed));
 
