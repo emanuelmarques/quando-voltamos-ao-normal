@@ -108,6 +108,17 @@
           </div>
         </div>
 
+        <div class="carousel-item" style="background-image: url(assets/img/slide/vaccine-3.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h1 style="color:orange;">60% - 1ª Dose</h1>
+              <h2 id="date60-1" class="animated fadeInDown"></h2>
+              <p class="animated fadeInUp">Data em que atingiremos 60% da população vacinada com pelo menos 1 dose, tendo em
+                conta o ritmo de vacinação atual</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Slide 3 -->
         <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
           <div class="carousel-container">
@@ -606,6 +617,7 @@ $(document).ready(function() {
 });
 
   var averageSpeed = 0;
+  var averageSpeedFirstDose = 0;
   function processData(allText) {
       var allTextLines = allText.split(/\r\n|\n/);
       var headers = allTextLines[0].split(',');
@@ -633,6 +645,9 @@ $(document).ready(function() {
 
       averageSpeed = (latest["doses"] - lines[lines.length - 15]["doses"]) / 14;
 
+      averageSpeedFirstDose = (latest["doses1"] - lines[lines.length - 15]["doses1"]) / 14;
+
+
       document.getElementById("speed").setAttribute("data-purecounter-end", parseInt(averageSpeed));
 
       document.getElementById("dailyUpdateDate").innerHTML = latest["data"];
@@ -644,6 +659,23 @@ $(document).ready(function() {
 
       let data50 = dateToPercent(0.5);
       document.getElementById("date50").innerHTML = data50.toLocaleDateString('pt-PT', options);
+
+      let data60_1 = dateToPercentFirstDose(0.6);
+      document.getElementById("date60-1").innerHTML = data60_1.toLocaleDateString('pt-PT', options);
+  }
+
+  function dateToPercentFirstDose(percent) {
+    var population = 10153698;
+    var givenVaccines = document.getElementById("singleVaccinated").getAttribute("data-purecounter-end");
+  
+    var totalVaccinesToGive = population;
+    var remainingVaccinesToGive = totalVaccinesToGive - givenVaccines;
+  
+    var daysUntilPercent = remainingVaccinesToGive / averageSpeedFirstDose * percent
+  
+    var dateOfPercent = new Date();
+  
+    return dateOfPercent.addDays(daysUntilPercent);
   }
     
   function dateToPercent(percent) {
