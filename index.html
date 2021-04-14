@@ -730,65 +730,64 @@ $(document).ready(function() {
       
       var latest = lines[lines.length - 1];
 
-      // document.getElementById("progressoveralllabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc"]*100) + "%";
-      // document.getElementById("progressoverallvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc"]*100));
-      // document.getElementById("progressoverallvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc"]*100));
+      document.getElementById("progressoveralllabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc"]*100) + "%";
+      document.getElementById("progressoverallvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc"]*100));
+      document.getElementById("progressoverallvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc"]*100));
 
-      document.getElementById("progressoveralllabel").innerHTML = "1ª dose: "+ 15 + "%" + "</br> Imunizados: "+  6 + "%";
-      document.getElementById("progressoverallvalue").setAttribute("aria-valuenow", 6);
-      document.getElementById("progressoverallvaluefirst").setAttribute("aria-valuenow", 15);
+      // document.getElementById("progressoveralllabel").innerHTML = "1ª dose: "+ 15 + "%" + "</br> Imunizados: "+  6 + "%";
+      // document.getElementById("progressoverallvalue").setAttribute("aria-valuenow", 6);
+      // document.getElementById("progressoverallvaluefirst").setAttribute("aria-valuenow", 15);
 
-      // document.getElementById("progress80pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_80+"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_80+"]*100) + "%";
-      // document.getElementById("progress80plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_80+"]*100));
-      // document.getElementById("progress80plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_80+"]*100));
+      document.getElementById("progress80pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_80+"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_80+"]*100) + "%";
+      document.getElementById("progress80plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_80+"]*100));
+      document.getElementById("progress80plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_80+"]*100));
 
-      document.getElementById("progress80pluslabel").innerHTML = "1ª dose: "+ 90 + "%" + "</br> Imunizados: "+  51 + "%";
-      document.getElementById("progress80plusvalue").setAttribute("aria-valuenow", 51);
-      document.getElementById("progress80plusvaluefirst").setAttribute("aria-valuenow", 90);
+      // document.getElementById("progress80pluslabel").innerHTML = "1ª dose: "+ 90 + "%" + "</br> Imunizados: "+  51 + "%";
+      // document.getElementById("progress80plusvalue").setAttribute("aria-valuenow", 51);
+      // document.getElementById("progress80plusvaluefirst").setAttribute("aria-valuenow", 90);
 
-      // document.getElementById("progress65pluslabel").innerHTML ="1ª dose: "+ Math.round(latest["doses1_perc_65_79"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_65_79"]*100) + "%";
-      // document.getElementById("progress65plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_65_79"]*100));
-      // document.getElementById("progress65plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_65_79"]*100));
+      document.getElementById("progress65pluslabel").innerHTML ="1ª dose: "+ Math.round(latest["doses1_perc_65_79"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_65_79"]*100) + "%";
+      document.getElementById("progress65plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_65_79"]*100));
+      document.getElementById("progress65plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_65_79"]*100));
       
-      document.getElementById("progress65pluslabel").innerHTML ="1ª dose: "+ 27 + "%" + "</br> Imunizados: "+  3 + "%";
-      document.getElementById("progress65plusvalue").setAttribute("aria-valuenow", 3);
-      document.getElementById("progress65plusvaluefirst").setAttribute("aria-valuenow", 27);
+      // document.getElementById("progress65pluslabel").innerHTML ="1ª dose: "+ 27 + "%" + "</br> Imunizados: "+  3 + "%";
+      // document.getElementById("progress65plusvalue").setAttribute("aria-valuenow", 3);
+      // document.getElementById("progress65plusvaluefirst").setAttribute("aria-valuenow", 27);
 
-      // document.getElementById("progress50pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_50_64"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_50_64"]*100) + "%";
-      // document.getElementById("progress50plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_50_64"]*100));
-      // document.getElementById("progress50plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_50_64"]*100));
+      document.getElementById("progress50pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_50_64"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_50_64"]*100) + "%";
+      document.getElementById("progress50plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_50_64"]*100));
+      document.getElementById("progress50plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_50_64"]*100));
 
-      document.getElementById("progress50pluslabel").innerHTML = "1ª dose: "+ 12 + "%" + "</br> Imunizados: "+  4 + "%";
-      document.getElementById("progress50plusvalue").setAttribute("aria-valuenow", 4);
-      document.getElementById("progress50plusvaluefirst").setAttribute("aria-valuenow", 12);
+      // document.getElementById("progress50pluslabel").innerHTML = "1ª dose: "+ 12 + "%" + "</br> Imunizados: "+  4 + "%";
+      // document.getElementById("progress50plusvalue").setAttribute("aria-valuenow", 4);
+      // document.getElementById("progress50plusvaluefirst").setAttribute("aria-valuenow", 12);
 
-      // document.getElementById("progress25pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_25_49"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_25_49"]*100) + "%";
-      // document.getElementById("progress25plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_25_49"]*100));
-      // document.getElementById("progress25plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_25_49"]*100));
+      document.getElementById("progress25pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_25_49"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_25_49"]*100) + "%";
+      document.getElementById("progress25plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_25_49"]*100));
+      document.getElementById("progress25plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_25_49"]*100));
 
-      document.getElementById("progress25pluslabel").innerHTML = "1ª dose: "+ 8+ "%" + "</br> Imunizados: "+  4 + "%";
-      document.getElementById("progress25plusvalue").setAttribute("aria-valuenow", 4);
-      document.getElementById("progress25plusvaluefirst").setAttribute("aria-valuenow", 8);
+      // document.getElementById("progress25pluslabel").innerHTML = "1ª dose: "+ 8+ "%" + "</br> Imunizados: "+  4 + "%";
+      // document.getElementById("progress25plusvalue").setAttribute("aria-valuenow", 4);
+      // document.getElementById("progress25plusvaluefirst").setAttribute("aria-valuenow", 8);
 
-      // document.getElementById("progress18pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_18_24"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_18_24"]*100) + "%";
-      // document.getElementById("progress18plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_18_24"]*100));
-      // document.getElementById("progress18plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_18_24"]*100));
+      document.getElementById("progress18pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_18_24"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_18_24"]*100) + "%";
+      document.getElementById("progress18plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_18_24"]*100));
+      document.getElementById("progress18plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_18_24"]*100));
 
-      document.getElementById("progress18pluslabel").innerHTML = "1ª dose: "+ 3 + "%" + "</br> Imunizados: "+  2+ "%";
-      document.getElementById("progress18plusvalue").setAttribute("aria-valuenow", 2);
-      document.getElementById("progress18plusvaluefirst").setAttribute("aria-valuenow", 3);
+      // document.getElementById("progress18pluslabel").innerHTML = "1ª dose: "+ 3 + "%" + "</br> Imunizados: "+  2+ "%";
+      // document.getElementById("progress18plusvalue").setAttribute("aria-valuenow", 2);
+      // document.getElementById("progress18plusvaluefirst").setAttribute("aria-valuenow", 3);
 
-      // document.getElementById("progress0pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_0_17"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_0_17"]*100) + "%";
-      // document.getElementById("progress0plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_0_17+"]*100));
-      // document.getElementById("progress0plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_0_17+"]*100));
+      document.getElementById("progress0pluslabel").innerHTML = "1ª dose: "+ Math.round(latest["doses1_perc_0_17"]*100) + "%" + "</br> Imunizados: "+  Math.round(latest["doses2_perc_0_17"]*100) + "%";
+      document.getElementById("progress0plusvalue").setAttribute("aria-valuenow", Math.round(latest["doses2_perc_0_17+"]*100));
+      document.getElementById("progress0plusvaluefirst").setAttribute("aria-valuenow", Math.round(latest["doses1_perc_0_17+"]*100));
 
-      document.getElementById("progress0pluslabel").innerHTML = "1ª dose: "+ 0 + "%" + "</br> Imunizados: "+  0 + "%";
-      document.getElementById("progress0plusvalue").setAttribute("aria-valuenow", 0);
-      document.getElementById("progress0plusvaluefirst").setAttribute("aria-valuenow", 0);
+      // document.getElementById("progress0pluslabel").innerHTML = "1ª dose: "+ 0 + "%" + "</br> Imunizados: "+  0 + "%";
+      // document.getElementById("progress0plusvalue").setAttribute("aria-valuenow", 0);
+      // document.getElementById("progress0plusvaluefirst").setAttribute("aria-valuenow", 0);
 
-      // document.getElementById("weeklyUpdateDate").innerHTML = latest["data"];
-
-      document.getElementById("weeklyUpdateDate").innerHTML = "11-04-2021";
+      document.getElementById("weeklyUpdateDate").innerHTML = latest["data"];
+      // document.getElementById("weeklyUpdateDate").innerHTML = "11-04-2021";
 
   }
 
