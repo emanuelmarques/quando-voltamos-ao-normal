@@ -83,11 +83,22 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/vaccine-1.jpg)">
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/vaccine-3.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h1 style="color:greenyellow;">70%</h1>
+              <h1 style="color:yellow;">70% - 1ª Dose</h1>
+              <h2 id="date60-1" class="animated fadeInDown"></h2>
+              <p class="animated fadeInUp">Data em que atingiremos 70% da população vacinada com pelo menos 1 dose, tendo em
+                conta o ritmo de vacinação atual</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 1 -->
+        <div class="carousel-item " style="background-image: url(assets/img/slide/vaccine-1.jpg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h1 style="color:green;">70%</h1>
               <h2 id="date70" class="animated fadeInDown"></h2>
               <p class="animated fadeInUp">Data em que atingiremos 70% da população vacinada com duas doses, tendo em
                 conta o ritmo de vacinação atual</p>
@@ -100,7 +111,7 @@
         <div class="carousel-item" style="background-image: url(assets/img/slide/vaccine-2.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h1 style="color:orange;">50%</h1>
+              <h1 style="color:yellowgreen;">50%</h1>
               <h2 id="date50" class="animated fadeInDown"></h2>
               <p class="animated fadeInUp">Data em que atingiremos 50% da população vacinada com duas doses, tendo em
                 conta o ritmo de vacinação atual</p>
@@ -108,16 +119,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" style="background-image: url(assets/img/slide/vaccine-3.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h1 style="color:orange;">60% - 1ª Dose</h1>
-              <h2 id="date60-1" class="animated fadeInDown"></h2>
-              <p class="animated fadeInUp">Data em que atingiremos 60% da população vacinada com pelo menos 1 dose, tendo em
-                conta o ritmo de vacinação atual</p>
-            </div>
-          </div>
-        </div>
+        
 
         <!-- Slide 3 -->
         <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
@@ -660,7 +662,7 @@ $(document).ready(function() {
       let data50 = dateToPercent(0.5);
       document.getElementById("date50").innerHTML = data50.toLocaleDateString('pt-PT', options);
 
-      let data60_1 = dateToPercentFirstDose(0.6);
+      let data60_1 = dateToPercentFirstDose(0.7);
       document.getElementById("date60-1").innerHTML = data60_1.toLocaleDateString('pt-PT', options);
   }
 
