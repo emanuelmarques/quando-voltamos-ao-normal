@@ -337,7 +337,7 @@
         </div>
 
         <div style = "text-align: right;color: grey;">
-          <p> Última atualização: 04-05-2021</p>
+          <p> Última atualização: 11-05-2021</p>
          </div>
       </div>
     </section><!-- End map Section -->
@@ -769,29 +769,29 @@ $(document).ready(function() {
 
       // document.getElementById("weeklyUpdateDate").innerHTML = latest["data"];
 
-      let overallFirst = 25;
-      let overallImmune = 9;
+      let overallFirst = 29;
+      let overallImmune = 11;
       document.getElementById("progressoverallpoplabel").insertAdjacentHTML('beforeend', "População Portuguesa</br>"+ parseInt(latest["populacao1"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progressoveralllabel").innerHTML = "1ª dose: "+ overallFirst + "%" + "</br> Imunizados: "+  overallImmune + "%";
       document.getElementById("progressoverallvalue").setAttribute("aria-valuenow", overallImmune);
       document.getElementById("progressoverallvaluefirst").setAttribute("aria-valuenow", overallFirst);     
 
-      let eightyFirst = 93;
-      let eightyImmune = 82;
+      let eightyFirst = 94;
+      let eightyImmune = 87;
       document.getElementById("progress80pluspoplabel").insertAdjacentHTML('beforeend', "80+</br>"+ parseInt(latest["populacao1_80+"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress80pluslabel").innerHTML = "1ª dose: "+ eightyFirst + "%" + "</br> Imunizados: "+  eightyImmune + "%";
       document.getElementById("progress80plusvalue").setAttribute("aria-valuenow", eightyImmune);
       document.getElementById("progress80plusvaluefirst").setAttribute("aria-valuenow", eightyFirst);
       
-      let sixtyFiveFirst = 71;
-      let sixtyFiveImmune = 7;
+      let sixtyFiveFirst = 84;
+      let sixtyFiveImmune = 17;
       document.getElementById("progress65pluspoplabel").insertAdjacentHTML('beforeend', "65-79</br>"+ parseInt(latest["populacao1_65_79"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress65pluslabel").innerHTML ="1ª dose: "+ sixtyFiveFirst + "%" + "</br> Imunizados: "+  sixtyFiveImmune + "%";
       document.getElementById("progress65plusvalue").setAttribute("aria-valuenow", sixtyFiveImmune);
       document.getElementById("progress65plusvaluefirst").setAttribute("aria-valuenow", sixtyFiveFirst);   
 
-      let fiftyFirst = 19;
-      let fiftyImmune = 4;
+      let fiftyFirst = 26;
+      let fiftyImmune = 5;
       document.getElementById("progress50pluspoplabel").insertAdjacentHTML('beforeend', "50-64</br>"+ parseInt(latest["populacao1_50_64"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress50pluslabel").innerHTML = "1ª dose: "+ fiftyFirst + "%" + "</br> Imunizados: "+  fiftyImmune + "%";
       document.getElementById("progress50plusvalue").setAttribute("aria-valuenow", fiftyImmune);
@@ -818,7 +818,7 @@ $(document).ready(function() {
       document.getElementById("progress0plusvalue").setAttribute("aria-valuenow", zeroImmune);
       document.getElementById("progress0plusvaluefirst").setAttribute("aria-valuenow", zeroFirst);
 
-      document.getElementById("weeklyUpdateDate").innerHTML = "04-05-2021";
+      document.getElementById("weeklyUpdateDate").innerHTML = "11-05-2021";
   }
 
   </script>
