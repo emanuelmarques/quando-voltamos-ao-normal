@@ -200,37 +200,60 @@
               class="purecounter"></span>
             <p>Vacinas Administradas</p>
           </div>
-          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
+          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
             <span id = "singleVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Total Pessoas com pelo menos 1 dose</p>
           </div>
 
-          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
+          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
             <span id = "fullyVaccinated" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Total Pessoas Imunizadas</p>
           </div>
 
 
-          <div class="col-xl-2 col-lg-6 col-md-12 text-center">
+          <div class="col-xl-3 col-lg-6 col-md-12 text-center">
             <span id = "newVaccines" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Vacinas Administradas nas últimas 24h</p>
           </div>    
 
-          <div class="col-xl-3 col-lg-12 col-md-12 text-center">
-            <span id = "speed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
-              class="purecounter"></span>
-            <p>Vacinas administradas por dia </br>  (média a 15 dias)</p>
-          </div>
-
-     
-          <div style = "text-align: right;color: grey;">
-            <p> Última atualização: <a id = 'dailyUpdateDate'></a></p>
-           </div>
-
         </div>
+
+
+        <div
+        class="col-xl-5 col-lg-6 col-md-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+        <h4>Ritmo de vacinação</h4>
+        <h5>Média a 15 dias</h5>
+      </div>
+
+      <div class="row counters">  
+
+        <div class="col-xl-4 col-lg-12 col-md-12 text-center">
+          <span id = "speed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+            class="purecounter"></span>
+          <p>Vacinas administradas por dia</p>
+        </div>
+
+        <div class="col-xl-4 col-lg-12 col-md-12 text-center">
+          <span id = "firstDoseSpeed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+            class="purecounter"></span>
+          <p>Primeiras doses administradas por dia</p>
+        </div>
+
+        <div class="col-xl-4 col-lg-12 col-md-12 text-center">
+          <span id = "secondDoseSpeed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
+            class="purecounter"></span>
+          <p>Segundas doses administradas por dia</p>
+        </div>
+
+   
+        <div style = "text-align: right;color: grey;">
+          <p> Última atualização: <a id = 'dailyUpdateDate'></a></p>
+         </div>
+
+      </div>
 
       </div>
     </section><!-- End Counts Section -->
@@ -620,6 +643,7 @@ $(document).ready(function() {
 
   var averageSpeed = 0;
   var averageSpeedFirstDose = 0;
+  var averageSpeedSecondDose = 0;
   function processData(allText) {
       var allTextLines = allText.split(/\r\n|\n/);
       var headers = allTextLines[0].split(',');
@@ -638,7 +662,7 @@ $(document).ready(function() {
       }
 
       
-      var latest = lines[lines.length - 1]
+      var latest = lines[lines.length - 1];
       document.getElementById("newVaccines").setAttribute("data-purecounter-end", latest["doses_novas"]);
       document.getElementById("givenVaccines").setAttribute("data-purecounter-end", latest["doses"]);
 
@@ -648,9 +672,13 @@ $(document).ready(function() {
       averageSpeed = (latest["doses"] - lines[lines.length - 15]["doses"]) / 14;
 
       averageSpeedFirstDose = (latest["doses1"] - lines[lines.length - 15]["doses1"]) / 14;
+      averageSpeedSecondDose = (latest["doses2"] - lines[lines.length - 15]["doses2"]) / 14;
 
 
       document.getElementById("speed").setAttribute("data-purecounter-end", parseInt(averageSpeed));
+      document.getElementById("firstDoseSpeed").setAttribute("data-purecounter-end", parseInt(averageSpeedFirstDose));
+      document.getElementById("secondDoseSpeed").setAttribute("data-purecounter-end", parseInt(averageSpeedSecondDose));
+
 
       document.getElementById("dailyUpdateDate").innerHTML = latest["data"];
 
