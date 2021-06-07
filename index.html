@@ -712,12 +712,12 @@ $(document).ready(function() {
     
   function dateToPercent(percent) {
     var population = 10153698;
-    var givenVaccines = document.getElementById("givenVaccines").getAttribute("data-purecounter-end");
+    var givenVaccines = document.getElementById("fullyVaccinated").getAttribute("data-purecounter-end");
   
-    var totalVaccinesToGive = population * 2;
+    var totalVaccinesToGive = population;
     var remainingVaccinesToGive = totalVaccinesToGive - givenVaccines;
   
-    var daysUntilPercent = remainingVaccinesToGive / averageSpeed * percent
+    var daysUntilPercent = remainingVaccinesToGive / averageSpeedSecondDose * percent
   
     var dateOfPercent = new Date();
   
