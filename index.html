@@ -3,6 +3,7 @@
 
 <head>
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/7cabf6d2bf.js" crossorigin="anonymous"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CY5V2N6VX"></script>
   <script>
@@ -76,6 +77,30 @@
 
     </div>
   </header><!-- End Header -->
+
+  <div id="exampleModalCenter" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <!--Modal Content-->
+        <div class="modal-content">
+            <!-- Modal Header-->
+            <div class="modal-header">
+                <h3>Agendamento disponível para maiores de 40 anos</h3>
+            </div> <!-- Modal Body-->
+            <div class="modal-body">
+                <div class="row">
+                    <!--Gift Icon-->
+                    <div class="col text-center"> <i class="fas fa-syringe fa-4x icon2"></i> </div>
+                    <!--Modal Text-->
+                    <div class="col-8">
+                        <p>Tem 40 ou mais anos e ainda não foi vacinado(a)?</p>
+                        <h6>Já pode fazer o seu pedido de agendamento! </h6>
+                    </div>
+                </div>
+            </div> <!-- Modal Footer-->
+            <div class="modal-footer"> <a href="https://covid19.min-saude.pt/pedido-de-agendamento/" target="_blank" class="btn btn-info">Agendar vacina <i class="fas fa-syringe"></i> </a> <a id= "myButton" href="" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</a> </div>
+        </div>
+    </div>
+  </div>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -731,6 +756,9 @@ $(document).ready(function() {
     return date;
   }
 
+    $(window).on('load', function() {
+        $('#exampleModalCenter').modal('show');
+    });
 
   $(document).ready(function() {
     $.ajax({
