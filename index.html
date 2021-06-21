@@ -67,9 +67,10 @@
         <ul>
           <li><a class="nav-link scrollto" href="#counts">Vacinação em Números</a></li> 
           <li><a class="nav-link scrollto active" href="#skills">População Imunizada</a></li>
-          <li><a class="nav-link scrollto" href="#map">Mapa de Vacinação</a></li>          
+          <li><a class="nav-link scrollto" href="#map">Mapa de Vacinação</a></li>
+          <li><a class="nav-link scrollto" href="#graph">Progresso</a></li>           
           <li><a class="nav-link scrollto" href="#services">Fontes de dados</a></li> 
-          <li><a href="https://www.buymeacoffee.com/emanuelsmarques"><img src="https://img.buymeacoffee.com/button-api/?text=Paga-me um café&emoji=&slug=emanuelsmarques&button_colour=2f2d2d&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00"></a></li>
+          <!-- <li><a href="https://www.buymeacoffee.com/emanuelsmarques"><img src="https://img.buymeacoffee.com/button-api/?text=Paga-me um café&emoji=&slug=emanuelsmarques&button_colour=2f2d2d&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00"></a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -372,8 +373,11 @@
         <div style = "text-align: right;color: grey;">
          <p> Última atualização: <a id = 'weeklyUpdateDate'></a></p>
         </div>
+
       </div>
     </section><!-- End Skills Section -->
+
+
 
     <!-- ======= Map Section ======= -->
     <section id="map" class="about">
@@ -393,9 +397,27 @@
       </div>
     </section><!-- End map Section -->
 
+    
+    <section id="graph" class="skills section-bg">
+      <div class="container-fluid">
+        <div
+          class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <h3>Progresso na Imunização</h3>
+        </div>
+        <div class="row justify-content-center skills-content">       
+          <div class="col-xl-6 col-md-12">
+            <iframe src="https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true&pickerSort=desc&pickerMetric=total_vaccinations&Metric=People+vaccinated&Interval=Cumulative&Relative+to+Population=true&Align+outbreaks=false&country=PRT~European+Union&hideControls=true" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+          </div>   
+          <div class="col-xl-6 col-md-12">
+            <iframe src="https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true&pickerSort=desc&pickerMetric=total_vaccinations&Metric=People+fully+vaccinated&Interval=Cumulative&Relative+to+Population=true&Align+outbreaks=false&country=PRT~European+Union&hideControls=true" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <section id="services" class="services">
       <div class="container-fluid">
 
         <div class="section-title">
@@ -618,6 +640,9 @@
                   <a href="https://www.linkedin.com/in/emanuelsmarques/"  target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                   <a href="https://twitter.com/epsmarques" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
                   <a href="https://github.com/emanuelmarques" target="_blank" class="github"><i class="bx bxl-github"></i></a>                  
+                </div>
+                <div class= "mt-3">
+                  <a href="https://www.buymeacoffee.com/emanuelsmarques"><img src="https://img.buymeacoffee.com/button-api/?text=Paga-me um café&emoji=&slug=emanuelsmarques&button_colour=2f2d2d&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00"></a>
                 </div>
               </div>
 
