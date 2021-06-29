@@ -137,7 +137,7 @@
         <div class="carousel-item " style="background-image: url(assets/img/slide/vaccine-1.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h1 style="color:green;">70%</h1>
+              <h1 style="color:yellowgreen;">70%</h1>
               <h2 id="date70" class="animated fadeInDown"></h2>
               <p class="animated fadeInUp">Data em que atingiremos 70% da população vacinada com duas doses, tendo em
                 conta o ritmo de vacinação atual</p>
@@ -150,9 +150,9 @@
         <div class="carousel-item" style="background-image: url(assets/img/slide/vaccine-2.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h1 style="color:yellowgreen;">50%</h1>
-              <h2 id="date50" class="animated fadeInDown"></h2>
-              <p class="animated fadeInUp">Data em que atingiremos 50% da população vacinada com duas doses, tendo em
+              <h1 style="color:green;">85%</h1>
+              <h2 id="date85" class="animated fadeInDown"></h2>
+              <p class="animated fadeInUp">Data em que atingiremos 85% da população vacinada com duas doses, tendo em
                 conta o ritmo de vacinação atual</p>
             </div>
           </div>
@@ -751,8 +751,8 @@ $(document).ready(function() {
       let data70 = dateToPercent(0.7);
       document.getElementById("date70").innerHTML = data70.toLocaleDateString('pt-PT', options);
 
-      let data50 = dateToPercent(0.5);
-      document.getElementById("date50").innerHTML = data50.toLocaleDateString('pt-PT', options);
+      let data50 = dateToPercent(0.85);
+      document.getElementById("date85").innerHTML = data50.toLocaleDateString('pt-PT', options);
 
       let data60_1 = dateToPercentFirstDose(0.7);
       document.getElementById("date60-1").innerHTML = data60_1.toLocaleDateString('pt-PT', options);
