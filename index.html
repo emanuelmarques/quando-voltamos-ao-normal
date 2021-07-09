@@ -265,7 +265,7 @@
         <div
         class="col-xl-5 col-lg-6 col-md-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
         <h4>Ritmo de vacinação</h4>
-        <h5>Média a 15 dias</h5>
+        <h5>Média a 7 dias</h5>
       </div>
 
       <div class="row counters">  
@@ -733,10 +733,10 @@ $(document).ready(function() {
       document.getElementById("singleVaccinated").setAttribute("data-purecounter-end", latest["doses1"]);
       document.getElementById("fullyVaccinated").setAttribute("data-purecounter-end", latest["doses2"]);
 
-      averageSpeed = (latest["doses"] - lines[lines.length - 15]["doses"]) / 14;
+      averageSpeed = (latest["doses"] - lines[lines.length - 8]["doses"]) / 7;
 
-      averageSpeedFirstDose = (latest["doses1"] - lines[lines.length - 15]["doses1"]) / 14;
-      averageSpeedSecondDose = (latest["doses2"] - lines[lines.length - 15]["doses2"]) / 14;
+      averageSpeedFirstDose = (latest["doses1"] - lines[lines.length - 8]["doses1"]) / 7;
+      averageSpeedSecondDose = (latest["doses2"] - lines[lines.length - 8]["doses2"]) / 7;
 
 
       document.getElementById("speed").setAttribute("data-purecounter-end", parseInt(averageSpeed));
