@@ -864,42 +864,42 @@ $(document).ready(function() {
 
       // document.getElementById("weeklyUpdateDate").innerHTML = latest["data"];
 
-      let overallFirst = 56;
-      let overallImmune = 36;
+      let overallFirst = 60;
+      let overallImmune = 42;
       document.getElementById("progressoverallpoplabel").insertAdjacentHTML('beforeend', "População Portuguesa</br>"+ parseInt(latest["populacao1"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progressoveralllabel").innerHTML = "1ª dose: "+ overallFirst + "%" + "</br> Imunizados: "+  overallImmune + "%";
       document.getElementById("progressoverallvalue").setAttribute("aria-valuenow", overallImmune);
       document.getElementById("progressoverallvaluefirst").setAttribute("aria-valuenow", overallFirst);     
 
-      let eightyFirst = 98;
-      let eightyImmune = 94;
+      let eightyFirst = 99;
+      let eightyImmune = 95;
       document.getElementById("progress80pluspoplabel").insertAdjacentHTML('beforeend', "80+</br>"+ parseInt(latest["populacao1_80+"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress80pluslabel").innerHTML = "1ª dose: "+ eightyFirst + "%" + "</br> Imunizados: "+  eightyImmune + "%";
       document.getElementById("progress80plusvalue").setAttribute("aria-valuenow", eightyImmune);
       document.getElementById("progress80plusvaluefirst").setAttribute("aria-valuenow", eightyFirst);
       
-      let sixtyFiveFirst = 98;
-      let sixtyFiveImmune = 75;
+      let sixtyFiveFirst = 99;
+      let sixtyFiveImmune = 88;
       document.getElementById("progress65pluspoplabel").insertAdjacentHTML('beforeend', "65-79</br>"+ parseInt(latest["populacao1_65_79"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress65pluslabel").innerHTML ="1ª dose: "+ sixtyFiveFirst + "%" + "</br> Imunizados: "+  sixtyFiveImmune + "%";
       document.getElementById("progress65plusvalue").setAttribute("aria-valuenow", sixtyFiveImmune);
       document.getElementById("progress65plusvaluefirst").setAttribute("aria-valuenow", sixtyFiveFirst);   
 
-      let fiftyFirst = 88;
-      let fiftyImmune = 59;
+      let fiftyFirst = 90;
+      let fiftyImmune = 71;
       document.getElementById("progress50pluspoplabel").insertAdjacentHTML('beforeend', "50-64</br>"+ parseInt(latest["populacao1_50_64"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress50pluslabel").innerHTML = "1ª dose: "+ fiftyFirst + "%" + "</br> Imunizados: "+  fiftyImmune + "%";
       document.getElementById("progress50plusvalue").setAttribute("aria-valuenow", fiftyImmune);
       document.getElementById("progress50plusvaluefirst").setAttribute("aria-valuenow", fiftyFirst);
 
-      let twentyFiveFirst = 45;
-      let twentyFiveImmune = 16;
+      let twentyFiveFirst = 57;
+      let twentyFiveImmune = 20;
       document.getElementById("progress25pluspoplabel").insertAdjacentHTML('beforeend', "25-49</br>"+ parseInt(latest["populacao1_25_49"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress25pluslabel").innerHTML = "1ª dose: "+ twentyFiveFirst+ "%" + "</br> Imunizados: "+  twentyFiveImmune + "%";
       document.getElementById("progress25plusvalue").setAttribute("aria-valuenow", twentyFiveImmune);
       document.getElementById("progress25plusvaluefirst").setAttribute("aria-valuenow", twentyFiveFirst);
 
-      let eighteenFirst = 6;
+      let eighteenFirst = 8;
       let eighteenImmune = 5;
       document.getElementById("progress18pluspoplabel").insertAdjacentHTML('beforeend', "18-24</br>"+ parseInt(latest["populacao1_18_24"]).toLocaleString('pt-PT')+ " pessoas");
       document.getElementById("progress18pluslabel").innerHTML = "1ª dose: "+ eighteenFirst + "%" + "</br> Imunizados: "+  eighteenImmune + "%";
