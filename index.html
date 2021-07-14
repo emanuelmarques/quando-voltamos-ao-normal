@@ -763,9 +763,9 @@ $(document).ready(function() {
     var givenVaccines = document.getElementById("singleVaccinated").getAttribute("data-purecounter-end");
   
     var totalVaccinesToGive = population;
-    var remainingVaccinesToGive = totalVaccinesToGive - givenVaccines;
+    var remainingVaccinesToGive = totalVaccinesToGive * percent - givenVaccines;
   
-    var daysUntilPercent = remainingVaccinesToGive / averageSpeedFirstDose * percent
+    var daysUntilPercent = remainingVaccinesToGive / averageSpeedFirstDose 
   
     var dateOfPercent = new Date();
   
@@ -777,9 +777,9 @@ $(document).ready(function() {
     var givenVaccines = document.getElementById("fullyVaccinated").getAttribute("data-purecounter-end");
   
     var totalVaccinesToGive = population;
-    var remainingVaccinesToGive = totalVaccinesToGive - givenVaccines;
+    var remainingVaccinesToGive = totalVaccinesToGive  * percent - givenVaccines;
   
-    var daysUntilPercent = remainingVaccinesToGive / averageSpeedSecondDose * percent
+    var daysUntilPercent = remainingVaccinesToGive / averageSpeedSecondDose
   
     var dateOfPercent = new Date();
   
