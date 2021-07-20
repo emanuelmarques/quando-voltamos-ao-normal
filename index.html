@@ -230,7 +230,6 @@
         <div
           class="col-xl-5 col-lg-6 col-md-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
           <h3>Vacinação em Números</h3>
-          <h4>Portugal Continental</h4>
         </div>
 
         <div class="row counters">
@@ -285,7 +284,7 @@
         <div class="col-xl-4 col-lg-12 col-md-12 text-center">
           <span id = "secondDoseSpeed" data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1"
             class="purecounter"></span>
-          <p>Segundas doses administradas por dia</p>
+          <p>Pessoas a terminarem o ciclo de vacinação por dia</p>
         </div>
 
    
@@ -727,16 +726,16 @@ $(document).ready(function() {
 
       
       var latest = lines[lines.length - 1];
-      document.getElementById("newVaccines").setAttribute("data-purecounter-end", latest["doses_novas"]);
-      document.getElementById("givenVaccines").setAttribute("data-purecounter-end", latest["doses"]);
+      document.getElementById("newVaccines").setAttribute("data-purecounter-end", latest["vacinas_novas"]);
+      document.getElementById("givenVaccines").setAttribute("data-purecounter-end", latest["vacinas"]);
 
-      document.getElementById("singleVaccinated").setAttribute("data-purecounter-end", latest["doses1"]);
-      document.getElementById("fullyVaccinated").setAttribute("data-purecounter-end", latest["doses2"]);
+      document.getElementById("singleVaccinated").setAttribute("data-purecounter-end", latest["pessoas_inoculadas"]);
+      document.getElementById("fullyVaccinated").setAttribute("data-purecounter-end", latest["pessoas_vacinadas_completamente"]);
 
-      averageSpeed = (latest["doses"] - lines[lines.length - 15]["doses"]) / 14;
+      averageSpeed = (latest["vacinas"] - lines[lines.length - 15]["vacinas"]) / 14;
 
-      averageSpeedFirstDose = (latest["doses1"] - lines[lines.length - 15]["doses1"]) / 14;
-      averageSpeedSecondDose = (latest["doses2"] - lines[lines.length - 15]["doses2"]) / 14;
+      averageSpeedFirstDose = (latest["pessoas_inoculadas"] - lines[lines.length - 15]["pessoas_inoculadas"]) / 14;
+      averageSpeedSecondDose = (latest["pessoas_vacinadas_completamente"] - lines[lines.length - 15]["pessoas_vacinadas_completamente"]) / 14;
 
 
       document.getElementById("speed").setAttribute("data-purecounter-end", parseInt(averageSpeed));
@@ -759,7 +758,7 @@ $(document).ready(function() {
   }
 
   function dateToPercentFirstDose(percent) {
-    var population = 9798858;
+    var population = 10165742;
     var givenVaccines = document.getElementById("singleVaccinated").getAttribute("data-purecounter-end");
   
     var totalVaccinesToGive = population;
@@ -773,7 +772,7 @@ $(document).ready(function() {
   }
     
   function dateToPercent(percent) {
-    var population = 9798858;
+    var population = 10165742;
     var givenVaccines = document.getElementById("fullyVaccinated").getAttribute("data-purecounter-end");
   
     var totalVaccinesToGive = population;
