@@ -121,7 +121,7 @@
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
       <div class="carousel-inner" role="listbox">
-
+<!-- 
         <div class="carousel-item active" style="background-image: url(assets/img/slide/vaccine-3.jpg)">
           <div class="carousel-container">
             <div class="container">
@@ -131,10 +131,10 @@
                 conta o ritmo de vacinação atual, e uma população de <a href="https://ine.pt/scripts/db_censos_2021.html" target="_blank">10 347 892</a> pessoas</p>
             </div>
           </div>
-        </div>
+        </div> -->
         
         <!-- Slide 1 -->
-        <div class="carousel-item " style="background-image: url(assets/img/slide/vaccine-1.jpg)">
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/vaccine-1.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h1 style="color:yellowgreen;">70%</h1>
@@ -769,7 +769,7 @@ $(document).ready(function() {
       let data50 = dateToPercent(0.85);
       document.getElementById("date85").innerHTML = data50.toLocaleDateString('pt-PT', options);
 
-      let data60_1 = dateToPercentFirstDose(0.7);
+      let data60_1 = dateToPercentFirstDose(0.85);
       document.getElementById("date60-1").innerHTML = data60_1.toLocaleDateString('pt-PT', options);
   }
 
