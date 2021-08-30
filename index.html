@@ -264,7 +264,7 @@
         <div
         class="col-xl-5 col-lg-6 col-md-12 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
         <h4>Ritmo de vacinação</h4>
-        <h5>Média a 7 dias</h5>
+        <h5>Média a 14 dias</h5>
       </div>
 
       <div class="row counters">  
@@ -732,26 +732,26 @@ $(document).ready(function() {
       document.getElementById("singleVaccinated").setAttribute("data-purecounter-end", latest["pessoas_inoculadas"]);
       document.getElementById("fullyVaccinated").setAttribute("data-purecounter-end", latest["pessoas_vacinadas_completamente"]);
 
-      var index = 8;
+      var index = 15;
 
 
       if (lines[lines.length - index]["vacinas"] == 0)
       {
         index++;
       }
-      averageSpeed = (latest["vacinas"] - lines[lines.length - index]["vacinas"]) / 7;
+      averageSpeed = (latest["vacinas"] - lines[lines.length - index]["vacinas"]) / (index - 1);
 
       if (lines[lines.length - index]["pessoas_inoculadas"] == 0)
       {
         index++;
       }
-      averageSpeedFirstDose = (latest["pessoas_inoculadas"] - lines[lines.length - index]["pessoas_inoculadas"]) / 7;
+      averageSpeedFirstDose = (latest["pessoas_inoculadas"] - lines[lines.length - index]["pessoas_inoculadas"]) / (index - 1);
 
       if (lines[lines.length - index]["pessoas_vacinadas_completamente"] == 0)
       {
         index++;
       }
-      averageSpeedSecondDose = (latest["pessoas_vacinadas_completamente"] - lines[lines.length - index]["pessoas_vacinadas_completamente"]) / 7;
+      averageSpeedSecondDose = (latest["pessoas_vacinadas_completamente"] - lines[lines.length - index]["pessoas_vacinadas_completamente"]) / (index - 1);
 
 
       document.getElementById("speed").setAttribute("data-purecounter-end", parseInt(averageSpeed));
